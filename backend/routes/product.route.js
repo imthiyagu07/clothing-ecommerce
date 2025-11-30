@@ -8,9 +8,12 @@ const router = express.Router();
 router.get('/', getProducts);
 router.get('/:id', getProductById);
 
+// Protected routes
+router.use(protect, admin)
+
 // Admin routes
-router.post('/', protect, admin, createProduct);
-router.put('/:id', protect, admin, updateProduct);
-router.delete('/:id', protect, admin, deleteProduct);
+router.post('/', createProduct);
+router.put('/:id', updateProduct);
+router.delete('/:id', deleteProduct);
 
 export default router;

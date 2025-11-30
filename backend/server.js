@@ -5,6 +5,7 @@ import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
 import authRoutes from "./routes/auth.route.js";
 import productRoutes from './routes/product.route.js';
+import cartRoutes from './routes/cart.route.js';
 
 dotenv.config(); // load environment variables
 
@@ -29,6 +30,7 @@ app.get("/", (req, res) => {
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/products', productRoutes);
+app.use('/api/cart', cartRoutes);
 
 // Error handling middleware
 app.use((err, req, res, next) => {
