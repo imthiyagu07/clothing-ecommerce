@@ -22,8 +22,7 @@ app.use(express.urlencoded({ extended: true }));
 // Error handling middleware
 app.use((err, req, res, next) => {
   const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
-  res.status(statusCode);
-  res.json({
+  res.status(statusCode).json({
     message: err.message,
     stack: process.env.NODE_ENV === 'production' ? null : err.stack,
   });
@@ -31,7 +30,7 @@ app.use((err, req, res, next) => {
 
 // test route
 app.get("/", (req, res) => {
-    res.json({ message: "API is running..."});
+    res.status(200).json({ message: "API is running..."});
 });
 
 const PORT = process.env.PORT || 5000;
