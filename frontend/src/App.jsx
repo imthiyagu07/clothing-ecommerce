@@ -4,6 +4,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
+import Products from './pages/Products';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/products" element={<div style={{ padding: '2rem' }}>Products Page - Coming Soon</div>} />
+        <Route path="/products" element={<Products />} />
         <Route path="/product/:id" element={<div style={{ padding: '2rem' }}>Product Detail - Coming Soon</div>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
