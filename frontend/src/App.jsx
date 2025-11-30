@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import ProtectedRoute from './components/ProtectedRoute';
 import Home from './pages/Home';
-// Import other pages as we create them
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 function App() {
   return (
@@ -12,8 +13,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/products" element={<div style={{ padding: '2rem' }}>Products Page - Coming Soon</div>} />
         <Route path="/product/:id" element={<div style={{ padding: '2rem' }}>Product Detail - Coming Soon</div>} />
-        <Route path="/login" element={<div style={{ padding: '2rem' }}>Login Page - Coming Soon</div>} />
-        <Route path="/register" element={<div style={{ padding: '2rem' }}>Register Page - Coming Soon</div>} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/cart" element={<div style={{ padding: '2rem' }}>Cart Page - Coming Soon</div>} />
         <Route
           path="/checkout"
