@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import cookieParser from "cookie-parser";
 import connectDB from "./config/db.js";
+import authRoutes from "./routes/auth.route.js";
 
 dotenv.config(); // load environment variables
 
@@ -19,6 +20,14 @@ app.use(cors({
 }));
 app.use(express.urlencoded({ extended: true }));
 
+// test route
+app.get("/", (req, res) => {
+    res.status(200).json({ message: "API is running..."});
+});
+
+// Routes
+app.use('/api/auth', authRoutes);
+
 // Error handling middleware
 app.use((err, req, res, next) => {
   const statusCode = res.statusCode === 200 ? 500 : res.statusCode;
@@ -26,11 +35,6 @@ app.use((err, req, res, next) => {
     message: err.message,
     stack: process.env.NODE_ENV === 'production' ? null : err.stack,
   });
-});
-
-// test route
-app.get("/", (req, res) => {
-    res.status(200).json({ message: "API is running..."});
 });
 
 const PORT = process.env.PORT || 5000;
