@@ -1,0 +1,94 @@
+/* Cart Page Mobile Responsive Styles */
+@media (max-width: 768px) {
+
+    /* Cart Container - Stack columns on mobile */
+    .cart-container {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Cart Item - Stack layout */
+    .cart-item {
+        flex-direction: column !important;
+        align-items: center !important;
+        padding: 1rem !important;
+    }
+
+    /* Cart Item Image - Full width on mobile */
+    .cart-item-image {
+        width: 100% !important;
+        height: 200px !important;
+        max-width: 300px !important;
+    }
+
+    /* Item Actions - Center and full width */
+    .cart-item-actions {
+        align-items: center !important;
+        width: 100% !important;
+    }
+
+    /* Quantity Buttons - Larger for touch */
+    .quantity-btn {
+        width: 44px !important;
+        height: 44px !important;
+        font-size: 1.5rem !important;
+    }
+
+    /* Summary - Remove sticky on mobile */
+    .cart-summary {
+        position: relative !important;
+        top: auto !important;
+        margin-top: 1.5rem !important;
+    }
+}
+
+/* Product Grid Responsive */
+@media (max-width: 1024px) {
+    div[style*="gridTemplateColumns"] {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    div[style*="gridTemplateColumns"] {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)) !important;
+        gap: 1rem !important;
+    }
+
+    /* Checkout 2-column layouts */
+    div[style*="gridTemplateColumns: '1.5fr 1fr'"] {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Product Detail 2-column layout */
+    div[style*="gridTemplateColumns: '1fr 1fr'"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+@media (max-width: 480px) {
+    div[style*="gridTemplateColumns"] {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* Mobile Tables */
+@media (max-width: 640px) {
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+/* Touch-Friendly Elements */
+@media (hover: none) and (pointer: coarse) {
+
+    button,
+    a,
+    input[type="button"],
+    input[type="submit"] {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0.75rem 1rem;
+    }
+}
