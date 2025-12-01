@@ -1,6 +1,13 @@
 # Clothing E-Commerce Application
 
-A full-stack MERN e-commerce web application for a fictional clothing brand with user authentication, product browsing, shopping cart, and order management.
+A full-stack MERN (MongoDB, Express, React, Node.js) e-commerce web application for a fictional clothing brand. Features include user authentication, product browsing with advanced filtering, shopping cart management, order processing, and email notifications.
+
+## 🌐 Live Demo
+
+- **Frontend**: [https://clothing-ecommerce-mu-one.vercel.app/](https://clothing-ecommerce-mu-one.vercel.app/)
+- **Backend API**: [https://clothing-ecommerce-rldl.onrender.com/api](https://clothing-ecommerce-rldl.onrender.com/api)
+
+> **Note**: The backend is hosted on Render's free tier and may take 30-60 seconds to wake up on the first request after inactivity.
 
 ## 🚀 Features
 
@@ -289,15 +296,20 @@ npm run preview  # Preview production build
 
 ## 🚀 Deployment
 
-### Backend Deployment (Render/Railway/Heroku)
-1. Set environment variables in hosting platform
-2. Update CORS origin to frontend URL
-3. Deploy from GitHub repository
+This application is deployed and live at:
+- **Frontend (Vercel)**: [https://clothing-ecommerce-mu-one.vercel.app/](https://clothing-ecommerce-mu-one.vercel.app/)
+- **Backend (Render)**: [https://clothing-ecommerce-rldl.onrender.com/api](https://clothing-ecommerce-rldl.onrender.com/api)
 
-### Frontend Deployment (Vercel/Netlify)
-1. Update `VITE_API_URL` to production backend URL
-2. Build the project: `npm run build`
-3. Deploy the `dist` folder
+### Deployment Stack
+- **Frontend**: Vercel (Free Tier)
+- **Backend**: Render (Free Tier)
+- **Database**: MongoDB Atlas (Free Tier - M0)
+- **Email**: Mailtrap (Free Tier)
+
+### Notes
+- Backend may take 30-60 seconds to wake up on first request (Render free tier limitation)
+- Automatic deployments enabled from GitHub `main` branch
+- HTTPS enabled by default on both platforms
 
 ## 🔐 Environment Variables Reference
 

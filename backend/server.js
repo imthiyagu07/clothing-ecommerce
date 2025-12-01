@@ -25,7 +25,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // test route
 app.get("/", (req, res) => {
-    res.status(200).json({ message: "API is running..."});
+  res.status(200).json({ message: "API is running..." });
 });
 
 // Routes
