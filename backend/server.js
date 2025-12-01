@@ -18,7 +18,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production' ? 'https://production-url' : 'http://localhost:5173',
+  origin: process.env.NODE_ENV === 'production' ? 'https://clothing-ecommerce-mu-one.vercel.app/' : 'http://localhost:5173',
   credentials: true
 }));
 app.use(express.urlencoded({ extended: true }));
