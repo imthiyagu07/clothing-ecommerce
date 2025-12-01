@@ -25,8 +25,8 @@ export const createOrder = async (req, res) => {
         return res.status(404).json({ message: `Product ${item.name} not found` });
       }
       if (product.stock < item.quantity) {
-        return res.status(400).json({ 
-          message: `Insufficient stock for ${product.name}. Available: ${product.stock}` 
+        return res.status(400).json({
+          message: `Insufficient stock for ${product.name}. Available: ${product.stock}`
         });
       }
     }

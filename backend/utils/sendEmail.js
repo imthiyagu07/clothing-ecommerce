@@ -2,9 +2,10 @@ import nodemailer from 'nodemailer';
 
 const sendOrderEmail = async (order, user) => {
   try {
-    // Create transporter
+    // Create transporter - Using Mailtrap for testing
     const transporter = nodemailer.createTransport({
-      service: 'gmail',
+      host: 'smtp.mailtrap.io',
+      port: 2525,
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
@@ -53,11 +54,11 @@ const sendOrderEmail = async (order, user) => {
             <div class="content">
               <h2>Order Confirmation</h2>
               <p><strong>Order ID:</strong> ${order._id}</p>
-              <p><strong>Order Date:</strong> ${new Date(order.createdAt).toLocaleDateString('en-IN', { 
-                year: 'numeric', 
-                month: 'long', 
-                day: 'numeric' 
-              })}</p>
+              <p><strong>Order Date:</strong> ${new Date(order.createdAt).toLocaleDateString('en-IN', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      })}</p>
               <p><strong>Customer:</strong> ${user.name}</p>
               
               <h3>Order Details</h3>
@@ -102,7 +103,7 @@ const sendOrderEmail = async (order, user) => {
 
     // Send email
     await transporter.sendMail(mailOptions);
-    console.log('Order confirmation email sent successfully');
+    console.log('✓ Order confirmation email sent successfully to:', user.email);
   } catch (error) {
     console.error('Error sending email:', error);
     throw new Error('Failed to send order confirmation email');

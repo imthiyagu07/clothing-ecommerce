@@ -7,6 +7,9 @@ import Register from './pages/Register';
 import Products from './pages/Products';
 import ProductDetail from './pages/ProductDetail';
 import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import Orders from './pages/Orders';
+import OrderSuccess from './pages/OrderSuccess';
 
 function App() {
   return (
@@ -23,7 +26,7 @@ function App() {
           path="/checkout"
           element={
             <ProtectedRoute>
-              <div style={{ padding: '2rem' }}>Checkout Page - Coming Soon</div>
+              <Checkout />
             </ProtectedRoute>
           }
         />
@@ -31,7 +34,7 @@ function App() {
           path="/orders"
           element={
             <ProtectedRoute>
-              <div style={{ padding: '2rem' }}>Orders Page - Coming Soon</div>
+              <Orders />
             </ProtectedRoute>
           }
         />
@@ -39,7 +42,7 @@ function App() {
           path="/order/:id"
           element={
             <ProtectedRoute>
-              <div style={{ padding: '2rem' }}>Order Success - Coming Soon</div>
+              <OrderSuccess />
             </ProtectedRoute>
           }
         />
